@@ -1,0 +1,261 @@
+.company {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        background: url(../img/company/company01.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 295px;
+        height: 98px;
+        right: 50%;
+        transform: translateX(50%);
+        top: unset;
+        bottom: 45px;
+
+        @include mq("tablet") {
+            width: 300px;
+            height: 100px;
+            right: 23px;
+            top: 44px;
+            bottom: unset;
+            transform: translateX(0);
+        }
+
+        @include mq("bootstrap-lg") {
+            width: 380px;
+            height: 120px;
+        }
+
+        @include mq("desktop") {
+            width: 611px;
+            height: 203px;
+        }
+    }
+
+    &.section {
+        @include mq("tablet", "max") {
+            padding-bottom: 168px;
+        }
+    }
+
+    &-block {
+        max-width: 801px;
+        width: 100%;
+        margin-left: 0;
+        padding-inline: 15px;
+
+        @include mq("tablet") {
+            max-width: 700px;
+            margin-left: 30px;
+            padding-inline: 0;
+        }
+
+        @include mq("bootstrap-lg") {
+            max-width: 801px;
+            margin-left: 50px;
+        }
+
+        @include mq("desktop") {
+            margin-left: 99px;
+        }
+
+        @media (min-width:1367px) {
+            margin-inline: auto;
+        }
+    }
+
+    &-heading {
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        gap: 9px;
+
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 52px;
+        letter-spacing: .05em;
+        padding-left: 50px;
+        margin-bottom: 30px;
+
+        @include mq("tablet") {
+            padding-left: 80px;
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        @include mq("bootstrap-lg") {
+            font-size: 50px;
+            line-height: 64px;
+            padding-left: 126px;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 42px;
+            height: 6px;
+            background: linear-gradient(to right, $color-primary, $color-sec);
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+
+            @include mq("tablet") {
+                width: 66px;
+            }
+
+            @include mq("bootstrap-lg") {
+                width: 96px;
+            }
+        }
+
+        &-sub {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 23px;
+            letter-spacing: .1em;
+        }
+    }
+
+    &-table {
+        table {
+            width: 100%;
+
+            tr {
+                border-bottom: 1px solid rgba($color: $color-white, $alpha: .4);
+
+                &:first-child {
+
+                    th,
+                    td {
+                        padding-top: 0;
+                    }
+                }
+            }
+
+            th,
+            td {
+                font-size: 14px;
+                line-height: 18px;
+                padding-block: 30px 29.5px;
+
+                @include mq("tablet") {
+                    font-size: 16px;
+                    line-height: 23px;
+                }
+
+                @include mq("bootstrap-lg") {
+                    font-size: 18px;
+                    line-height: 23px;
+                }
+            }
+
+            th {
+                font-weight: 700;
+                text-align: start;
+                width: 70px;
+
+                @include mq("tablet") {
+                    width: 120px;
+                }
+
+                @include mq("bootstrap-lg") {
+                    width: 150px;
+                }
+            }
+
+            td {
+                font-weight: 500;
+                @include mq("tablet", "max") {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        &-txt {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            @include mq("tablet") {
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+            }
+
+            &.mt-20 {
+                margin-top: 20px;
+            }
+        }
+
+        &-link {
+            position: relative;
+            width: 100%;
+            color: $color-white;
+            border-radius: 16px;
+            border: 1px solid $color-white;
+            max-width: 129px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            z-index: 2;
+            margin-top: 5px;
+
+            @include mq("tablet") {
+                margin-top: 0;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                transition-property: transform, background-color, border-color, box-shadow;
+                transition-duration: 0.4s;
+                transition-timing-function: cubic-bezier(0.25, 0.74, 0.22, 0.99);
+                background-color: #fff;
+                transform: scale(0);
+                border-radius: 17px;
+                z-index: -1;
+            }
+
+            &:hover {
+                opacity: 1;
+                color: $color-black;
+
+                &::before {
+                    transform: scale(1.01);
+                }
+
+                .norm {
+                    display: none;
+                }
+
+                .hover {
+                    display: block;
+                }
+            }
+
+            img {
+                width: 16px;
+                height: 19px;
+            }
+
+            .norm {
+                display: block;
+            }
+
+            .hover {
+                display: none;
+            }
+        }
+    }
+}

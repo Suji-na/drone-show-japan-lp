@@ -1,0 +1,50 @@
+.voice{
+    background: rgba($color: $color-white, $alpha: .05);
+    &-block{
+        max-width: 1126px;
+        margin-inline: auto;
+        width: 100%;
+        padding-inline: 20px 21px;
+    }
+    &-row{
+        display: flex;
+        flex-direction: column;
+        gap: 47px;
+        @include mq("tablet"){
+            flex-direction: row;
+            gap: 40px;
+        }
+        :nth-child(2){
+            .voice-col-txt{
+                letter-spacing: .08em;
+            }
+        }
+    }
+    &-col{
+        width: 100%;
+        @include mq("tablet"){
+            width: calc((100% / 3) - ((40px * 2) / 3));
+        }
+        &-txt{
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 21.67px;
+            margin-block: 20px 12px;
+            @include mq("tablet"){
+                font-size: 16px;
+                line-height: 23px;
+                margin-block: 20px 19px;
+            }
+        }
+        &-note{
+            text-align: end;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 17px;
+            @include mq("tablet"){
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+}

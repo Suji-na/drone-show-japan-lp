@@ -1,0 +1,140 @@
+.faq {
+    padding-inline: 15px;
+
+    @media (min-width:1200px) {
+        padding-inline: 0;
+    }
+
+    &-row {
+        max-width: 1166px;
+        margin: 0 auto;
+
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+    }
+
+
+    &-q-block {
+        display: flex;
+        align-items: center;
+        background-color: #0078f066;
+        cursor: pointer;
+
+        &.open {
+            .faq-q-block-txt::after {
+                background-image: url('.././img/faq/minus.svg');
+                transform: rotate(180deg) translateY(50%);
+            }
+        }
+    }
+
+    &-q {
+        &-txt {
+            color: #fff;
+            font-family: $font-arial;
+            font-weight: 100;
+            font-size: 29px;
+            line-height: 33px;
+            padding-left: 15.5px;
+
+
+        }
+
+
+        &-block-txt {
+            font-weight: 700;
+            position: relative;
+            color: #fff;
+            width: 100%;
+            font-size: 13px;
+            line-height: 17px;
+            padding: 23.5px 35.5px 19.5px 15.2px;
+
+            @include mq("tablet") {
+                font-size: 16px;
+                line-height: 21px;
+                padding: 20px 45px 19px 15.2px;
+
+            }
+
+            &::after {
+                content: "";
+                background-image: url('.././img/faq/plus.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                top: 50%;
+                transform: translateY(-50%) rotate(0);
+                position: absolute;
+                right: 15px;
+                width: 20px;
+                transition: 0.3s;
+                height: 20px;
+
+                @include mq("tablet") {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+
+    &-a {
+        &-block {
+            opacity: 0;
+            max-height: 0;
+            height: 0;
+            visibility: hidden;
+            transition: 0.3s all ease;
+
+            &.active {
+                opacity: 1;
+                height: 100%;
+                visibility: visible;
+                // transition: 0.3s max-height ease-in-out;
+            }
+
+            &-txt {
+                font-weight: 500;
+                color: #fff;
+                width: 100%;
+                font-size: 13px;
+                line-height: 17.5px;
+                padding: 0 10px 0 16.2px;
+
+                @include mq("tablet") {
+                    line-height: 21px;
+                    font-size: 16px;
+                    padding: 0 45px 0 15.2px;
+
+                }
+            }
+
+            &-container {
+                display: flex;
+                align-items: center;
+                padding-top: 17px;
+
+                @include mq("tablet") {
+                    padding-top: 15.5px;
+
+                }
+            }
+        }
+
+        &-txt {
+            font-size: 29px;
+            line-height: 33px;
+            color: #0078F0;
+            font-family: $font-arial;
+            font-weight: 100;
+            padding-left: 15.5px;
+        }
+
+
+    }
+
+
+
+}

@@ -1,0 +1,104 @@
+.mv {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 24px;
+    @include mq("tablet"){
+        flex-direction: row;
+        gap: 20px;
+    }
+    @include mq("bootstrap-lg"){
+        gap: 63px;
+    }
+    @include mq("desktop-lg"){
+        max-width: 1366px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    &-lft {
+        width: 100%;
+        max-width: 622px;
+        padding: 0 18px 30px 17px;
+        z-index: 5;
+        @include mq("tablet"){
+            padding: 80px 0 162px 20px;
+        }
+        @include mq("bootstrap-lg"){
+            padding: 80px 0 162px 59px;
+        }
+
+        &-note {
+            font-weight: 400;
+            font-size: 8px;
+            line-height: 10.5px;
+            letter-spacing: .1em;
+            margin-top: 20px;
+            @include mq("tablet"){
+                font-size: 10px;
+                line-height: 13px;
+                margin-top: 41px;
+            }
+        }
+    }
+
+    &-rgt {
+        width: 100%;
+        max-width: 100%;
+        @include mq("tablet"){
+            max-width: 450px;
+        }
+        @include mq("bootstrap-lg"){
+            max-width: 550px;
+        }
+        @include mq("desktop"){
+            max-width: 600px;
+        }
+        @include mq("desktop-lg"){
+            max-width: 680px;
+        }
+
+        .swiper {
+            &-slide {
+                // animation: fadeIn 1.5s forwards ease-in-out;
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &-pagination {
+                width: fit-content;
+                display: flex;
+                flex-direction: column;
+
+                left: unset;
+                right: 10px;
+                top: 90px;
+                z-index: 10;
+                @include mq("tablet"){
+                    right: 15px;
+                    top: 147px;
+                }
+
+                &-bullet {
+                    background: $color-primary;
+                    border-radius: 0;
+                    width: 4px;
+                    height: 50px;
+                    margin: 0 0 4.5px 0 !important;
+                    @include mq("tablet"){
+                        width: 7px;
+                        height: 71px;
+                        margin: 0 0 10px 0 !important;
+                    }
+
+                    &-active {
+                        background: #009FF4;
+                    }
+                }
+            }
+        }
+    }
+}
